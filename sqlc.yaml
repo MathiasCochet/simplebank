@@ -1,0 +1,11 @@
+version: 1
+packages:
+  - name: "db"
+    path: "./db/sqlc"
+    queries: "./db/query/"
+    schema: "./db/migration/"
+    engine: "postgresql"
+    emit_json_tags: true # We want sqlc to add json tags to our queries.
+    emit_prepared_queries: false # This will improve speed, but is not needed right now.
+    emit_interface: false # Enable this if you want to mock/test the database functions.
+    emit_exact_table_names: false # If true, the object names will be exactly the same as the table names (so not singular in some cases...)
